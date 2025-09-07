@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunaria - Цифровые продукты, вдохновленные космосом</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#8B5CF6', secondary: '#F59E0B' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e1b4b 0%, #3730a3 25%, #7c3aed 50%, #c084fc 75%, #fbbf24 100%);
+        }
+
+        .star-field {
+            background: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 2px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
+                radial-gradient(2px 1px at 160px 30px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 20s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-100px);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+            }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .glow-effect {
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .parallax {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #8B5CF6, #F59E0B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lunar-glow {
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+    </style>
+</head>
+
+<body class="smooth-scroll bg-gray-900 text-white overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-20 backdrop-blur-md">
+        <nav class="flex items-center justify-between px-8 py-6">
+            <div class="font-['Pacifico'] text-2xl text-gradient">Lunaria</div>
+            <button class="w-10 h-10 flex items-center justify-center">
+                <i class="ri-menu-line text-2xl text-white"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="relative min-h-screen flex items-center justify-center gradient-bg overflow-hidden">
+        <div class="absolute inset-0 lunar-glow"></div>
+        <div class="absolute inset-0 star-field opacity-30"></div>
+
+        <div class="relative z-10 text-center px-8 max-w-4xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-light mb-8 floating">
+                <span class="text-gradient">Lunaria</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-purple-200 mb-12 leading-relaxed">
+                Где цифровое искусство встречается с космической поэзией,<br>
+                создавая атмосферные продукты для души
+            </p>
+            <button
+                class="px-12 py-4 bg-white bg-opacity-20 backdrop-blur-md rounded-full text-lg font-medium hover:bg-opacity-30 transition-all duration-300 glow-effect !rounded-button whitespace-nowrap">
+                Исследовать вселенную
+            </button>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="ri-arrow-down-line text-2xl text-purple-300"></i>
+        </div>
+    </section>
+
+    <section class="relative py-32 px-8" style="background: linear-gradient(180deg, #1e1b4b 0%, #0f0f23 100%);">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-5xl font-light text-gradient mb-8">Философия космоса</h2>
+                    <p class="text-lg text-purple-200 leading-relaxed">
+                        Мы верим, что каждый цифровой продукт должен быть не просто инструментом, а порталом в мир
+                        красоты и вдохновения.
+                    </p>
+                    <p class="text-lg text-purple-200 leading-relaxed">
+                        Наши творения рождаются на пересечении природы, искусства и бесконечности космоса, создавая
+                        уникальный опыт для каждого пользователя.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-8 mt-12">
+                        <div class="text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-purple-500 bg-opacity-20 rounded-full">
+                                <i class="ri-plant-line text-2xl text-purple-300"></i>
+                            </div>
+                            <h3 class="text-sm font-medium text-purple-200">Природа</h3>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-purple-500 bg-opacity-20 rounded-full">
+                                <i class="ri-palette-line text-2xl text-purple-300"></i>
+                            </div>
+                            <h3 class="text-sm font-medium text-purple-200">Искусство</h3>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-purple-500 bg-opacity-20 rounded-full">
+                                <i class="ri-planet-line text-2xl text-purple-300"></i>
+                            </div>
+                            <h3 class="text-sm font-medium text-purple-200">Космос</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img src="https://readdy.ai/api/search-image?query=ethereal%20digital%20art%20cosmic%20landscape%20with%20floating%20geometric%20shapes%2C%20soft%20purple%20and%20gold%20gradients%2C%20mystical%20atmosphere%2C%20minimalist%20composition%2C%20dreamy%20space%20environment%20with%20subtle%20light%20rays%20and%20particle%20effects%2C%20serene%20and%20poetic%20visual&width=600&height=700&seq=philosophy&orientation=portrait"
+                        alt="Космическое искусство" class="w-full h-auto rounded-2xl object-cover object-top floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-32" style="background: linear-gradient(180deg, #0f0f23 0%, #1a1a2e 100%);">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-light text-gradient mb-6">Наши созвездия</h2>
+                <p class="text-xl text-purple-200">Каждый продукт — это звезда в нашей цифровой галактике</p>
+            </div>
+
+            <div class="flex overflow-x-auto gap-8 pb-8" style="scroll-snap-type: x mandatory;">
+                <div class="product-card flex-none w-80 bg-gradient-to-br from-purple-900 to-indigo-900 rounded-2xl p-8 backdrop-blur-md"
+                    style="scroll-snap-align: start;">
+                    <img src="https://readdy.ai/api/search-image?query=mystical%20mobile%20app%20interface%20floating%20in%20cosmic%20space%2C%20holographic%20UI%20elements%2C%20soft%20purple%20and%20blue%20gradients%2C%20ethereal%20glow%20effects%2C%20minimalist%20design%20with%20constellation%20patterns%2C%20dreamy%20atmosphere%2C%20digital%20art%20style&width=320&height=200&seq=product1&orientation=landscape"
+                        alt="Stellar App" class="w-full h-48 object-cover object-top rounded-xl mb-6">
+                    <h3 class="text-2xl font-medium text-white mb-4">Stellar App</h3>
+                    <p class="text-purple-200 mb-6 leading-relaxed">Мобильное приложение для медитации под звездным
+                        небом с персонализированными космическими путешествиями</p>
+                    <button
+                        class="px-6 py-3 bg-white bg-opacity-10 backdrop-blur-md rounded-full text-sm font-medium hover:bg-opacity-20 transition-all duration-300 !rounded-button whitespace-nowrap">
+                        Узнать больше
+                    </button>
+                </div>
+
+                <div class="product-card flex-none w-80 bg-gradient-to-br from-indigo-900 to-purple-900 rounded-2xl p-8 backdrop-blur-md"
+                    style="scroll-snap-align: start;">
+                    <img src="https://readdy.ai/api/search-image?query=elegant%20web%20platform%20interface%20with%20cosmic%20design%20elements%2C%20aurora%20borealis%20colors%2C%20flowing%20gradients%2C%20artistic%20dashboard%20with%20nature-inspired%20icons%2C%20ethereal%20user%20interface%20floating%20in%20space%2C%20dreamy%20digital%20environment&width=320&height=200&seq=product2&orientation=landscape"
+                        alt="Aurora Platform" class="w-full h-48 object-cover object-top rounded-xl mb-6">
+                    <h3 class="text-2xl font-medium text-white mb-4">Aurora Platform</h3>
+                    <p class="text-purple-200 mb-6 leading-relaxed">Веб-платформа для создания интерактивных
+                        визуализаций данных в стиле северного сияния</p>
+                    <button
+                        class="px-6 py-3 bg-white bg-opacity-10 backdrop-blur-md rounded-full text-sm font-medium hover:bg-opacity-20 transition-all duration-300 !rounded-button whitespace-nowrap">
+                        Узнать больше
+                    </button>
+                </div>
+
+                <div class="product-card flex-none w-80 bg-gradient-to-br from-purple-900 to-pink-900 rounded-2xl p-8 backdrop-blur-md"
+                    style="scroll-snap-align: start;">
+                    <img src="https://readdy.ai/api/search-image?query=cosmic%20VR%20headset%20floating%20in%20ethereal%20space%20environment%2C%20holographic%20interface%20elements%2C%20soft%20golden%20and%20purple%20light%20effects%2C%20futuristic%20virtual%20reality%20device%20with%20constellation%20patterns%2C%20dreamy%20atmosphere%2C%20digital%20art%20style&width=320&height=200&seq=product3&orientation=landscape"
+                        alt="Nebula VR" class="w-full h-48 object-cover object-top rounded-xl mb-6">
+                    <h3 class="text-2xl font-medium text-white mb-4">Nebula VR</h3>
+                    <p class="text-purple-200 mb-6 leading-relaxed">Виртуальная реальность для исследования туманностей
+                        и создания собственных космических миров</p>
+                    <button
+                        class="px-6 py-3 bg-white bg-opacity-10 backdrop-blur-md rounded-full text-sm font-medium hover:bg-opacity-20 transition-all duration-300 !rounded-button whitespace-nowrap">
+                        Узнать больше
+                    </button>
+                </div>
+
+                <div class="product-card flex-none w-80 bg-gradient-to-br from-pink-900 to-orange-900 rounded-2xl p-8 backdrop-blur-md"
+                    style="scroll-snap-align: start;">
+                    <img src="https://readdy.ai/api/search-image?query=artistic%20AI%20tool%20interface%20with%20cosmic%20neural%20network%20visualization%2C%20flowing%20data%20streams%20in%20space%2C%20ethereal%20machine%20learning%20algorithms%2C%20soft%20gradients%20and%20particle%20effects%2C%20futuristic%20AI%20dashboard%20floating%20in%20cosmic%20environment&width=320&height=200&seq=product4&orientation=landscape"
+                        alt="Cosmos AI" class="w-full h-48 object-cover object-top rounded-xl mb-6">
+                    <h3 class="text-2xl font-medium text-white mb-4">Cosmos AI</h3>
+                    <p class="text-purple-200 mb-6 leading-relaxed">ИИ-помощник для создания поэтических текстов и
+                        визуальных композиций, вдохновленных космосом</p>
+                    <button
+                        class="px-6 py-3 bg-white bg-opacity-10 backdrop-blur-md rounded-full text-sm font-medium hover:bg-opacity-20 transition-all duration-300 !rounded-button whitespace-nowrap">
+                        Узнать больше
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-32 star-field" style="background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-8 text-center">
+            <h2 class="text-5xl font-light text-gradient mb-16">Голоса из космоса</h2>
+
+            <div class="space-y-12">
+                <div
+                    class="bg-white bg-opacity-5 backdrop-blur-md rounded-2xl p-8 border border-purple-500 border-opacity-20">
+                    <blockquote class="text-2xl font-light text-purple-100 mb-6 italic leading-relaxed">
+                        "Lunaria открыла для меня новый способ взаимодействия с цифровым миром. Каждый продукт — это не
+                        просто инструмент, а путешествие к звездам."
+                    </blockquote>
+                    <div class="flex items-center justify-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-medium">АМ</span>
+                        </div>
+                        <div>
+                            <div class="text-white font-medium">Анна Морозова</div>
+                            <div class="text-purple-300 text-sm">UX-дизайнер, Яндекс</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white bg-opacity-5 backdrop-blur-md rounded-2xl p-8 border border-purple-500 border-opacity-20">
+                    <blockquote class="text-2xl font-light text-purple-100 mb-6 italic leading-relaxed">
+                        "Философия Lunaria резонирует с моим пониманием того, каким должно быть будущее технологий —
+                        красивым, осмысленным и вдохновляющим."
+                    </blockquote>
+                    <div class="flex items-center justify-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-medium">МК</span>
+                        </div>
+                        <div>
+                            <div class="text-white font-medium">Максим Козлов</div>
+                            <div class="text-purple-300 text-sm">Арт-директор, Тинькофф</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white bg-opacity-5 backdrop-blur-md rounded-2xl p-8 border border-purple-500 border-opacity-20">
+                    <blockquote class="text-2xl font-light text-purple-100 mb-6 italic leading-relaxed">
+                        "Работать с продуктами Lunaria — это как медитация. Они помогают найти баланс между технологиями
+                        и внутренним миром."
+                    </blockquote>
+                    <div class="flex items-center justify-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-medium">ЕВ</span>
+                        </div>
+                        <div>
+                            <div class="text-white font-medium">Елена Васильева</div>
+                            <div class="text-purple-300 text-sm">Продуктовый менеджер, VK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="relative py-32 gradient-bg overflow-hidden">
+        <div class="absolute inset-0 lunar-glow"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-8 text-center">
+            <h2 class="text-6xl font-light mb-8 floating">
+                Присоединиться к <span class="text-gradient">созвездию Lunaria</span>
+            </h2>
+            <p class="text-xl text-purple-200 mb-12 leading-relaxed">
+                Станьте частью нашей вселенной и получайте эксклюзивные материалы о новых продуктах, космической
+                философии и цифровом искусстве
+            </p>
+
+            <div class="max-w-md mx-auto">
+                <div class="flex gap-4 mb-8">
+                    <input type="email" placeholder="Ваш космический адрес"
+                        class="flex-1 px-6 py-4 bg-white bg-opacity-10 backdrop-blur-md rounded-full text-white placeholder-purple-300 border border-purple-500 border-opacity-30 focus:outline-none focus:border-purple-400 text-sm">
+                    <button
+                        class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-300 glow-effect !rounded-button whitespace-nowrap">
+                        Запустить
+                    </button>
+                </div>
+                <p class="text-sm text-purple-300">
+                    Мы уважаем вашу приватность и отправляем только самые важные сообщения из космоса
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative py-16 bg-black bg-opacity-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left">
+                    <div class="font-['Pacifico'] text-3xl text-gradient mb-4">Lunaria</div>
+                    <p class="text-purple-300">Создаем цифровые миры, вдохновленные космосом</p>
+                </div>
+
+                <div class="flex gap-6">
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-md rounded-full hover:bg-opacity-20 transition-all duration-300">
+                        <i class="ri-instagram-line text-xl text-purple-300"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-md rounded-full hover:bg-opacity-20 transition-all duration-300">
+                        <i class="ri-twitter-line text-xl text-purple-300"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-md rounded-full hover:bg-opacity-20 transition-all duration-300">
+                        <i class="ri-linkedin-line text-xl text-purple-300"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-md rounded-full hover:bg-opacity-20 transition-all duration-300">
+                        <i class="ri-dribbble-line text-xl text-purple-300"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-12 mb-8"></div>
+
+            <div class="text-center text-purple-400 text-sm">
+                © 2025 Lunaria. Все права защищены космическими законами вселенной.
+            </div>
+        </div>
+    </footer>
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="parallax-effects">
+        document.addEventListener('DOMContentLoaded', function () {
+            const parallaxElements = document.querySelectorAll('.parallax');
+
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+
+                parallaxElements.forEach(element => {
+                    element.style.transform = `translateY(${rate}px)`;
+                });
+            }
+
+            window.addEventListener('scroll', updateParallax);
+        });
+    </script>
+
+    <script id="product-carousel">
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('.flex.overflow-x-auto');
+            if (carousel) {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                carousel.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    startX = e.pageX - carousel.offsetLeft;
+                    scrollLeft = carousel.scrollLeft;
+                });
+
+                carousel.addEventListener('mouseleave', () => {
+                    isDown = false;
+                });
+
+                carousel.addEventListener('mouseup', () => {
+                    isDown = false;
+                });
+
+                carousel.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - carousel.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    carousel.scrollLeft = scrollLeft - walk;
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
